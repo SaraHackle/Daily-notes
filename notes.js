@@ -1,3 +1,4 @@
+const searchTerm = "confident";
 const notes = [
   {
     id: 1,
@@ -23,13 +24,23 @@ const noteAboutToday = {
   timeSpent: 10,
 };
 
-notes.push(noteAboutToday);
+const newestNote = {
+  id: 4,
+  subject: "for loops",
+  date: "11 / 17 / 2021",
+  feeling: "confident",
+  timeSpent: 15,
+};
+
+notes.push(noteAboutToday, newestNote);
 
 for (const note of notes) {
-  console.log(`Note: ${note.id}
+  if (note.feeling === searchTerm) {
+    console.log(`Note: ${note.id}
 Subject is: ${note.subject}
 Date : ${note.date}
 Feeling: ${note.feeling}
 Amount of time spent learning: ${note.timeSpent} minutes
 `);
+  }
 }
